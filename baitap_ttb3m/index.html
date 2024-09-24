@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tính Điểm Trung Bình</title>
+    <script>
+        function tinhDiemTrungBinh(isPrompt) {
+            let toan, ly, hoa;
+
+            // Kiểm tra cách nhập liệu 
+            if (isPrompt) {
+                // Nhập điểm bằng prompt
+                toan = parseFloat(prompt("Nhập điểm Toán:"));
+                ly = parseFloat(prompt("Nhập điểm Lý:"));
+                hoa = parseFloat(prompt("Nhập điểm Hóa:"));
+            } else {
+                // Nhập điểm từ input
+                toan = parseFloat(document.getElementById("toan").value);
+                ly = parseFloat(document.getElementById("ly").value);
+                hoa = parseFloat(document.getElementById("hoa").value);
+            }
+
+            // Kiểm tra nếu có giá trị không hợp lệ
+            if (isNaN(toan) || isNaN(ly) || isNaN(hoa)) {
+                alert("Vui lòng nhập đúng điểm cho tất cả các môn.");
+                return;
+            }
+
+            // Tính điểm trung bình cộng
+            var diemTrungBinh = (toan + ly + hoa) / 3;
+
+            // Hiển thị kết quả lên thẻ h1
+            document.getElementById("ketQua").innerText = "Điểm trung bình: " + diemTrungBinh.toFixed(2);
+
+            // Hiển thị thông báo kết quả bằng alert
+            alert("Điểm trung bình cộng của 3 môn là: " + diemTrungBinh.toFixed(2));
+        }
+    </script>
+</head>
+<body>
+    <h1>Tính Điểm Trung Bình 3 Môn</h1>
+
+    <!-- Giao diện nhập liệu bằng input -->
+    <label>Toán: <input type="number" id="toan" /></label><br><br>
+    <label>Lý: <input type="number" id="ly" /></label><br><br>
+    <label>Hóa: <input type="number" id="hoa" /></label><br><br>
+
+    <!-- Nút để tính điểm (input) -->
+    <button onclick="tinhDiemTrungBinh(false)">Tính điểm (input)</button>
+    <br><br>
+
+    <!-- Nút để tính điểm (prompt) -->
+    <button onclick="tinhDiemTrungBinh(true)">Tính điểm (prompt)</button>
+
+    <!-- Hiển thị kết quả -->
+    <h1 id="ketQua"></h1>
+</body>
+</html>
