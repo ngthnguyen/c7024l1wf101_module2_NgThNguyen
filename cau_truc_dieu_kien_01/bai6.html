@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bai6</title>
+</head>
+<body>
+    <script>
+        let DoanhSo = +prompt("Doanh So Ban Hang Cua Ban: ")
+        let HoaHong;
+
+        if (DoanhSo < 2000000) {
+            HoaHong = DoanhSo * 0.03; 
+        } else if (DoanhSo < 5000000) {
+            HoaHong = DoanhSo * 0.05; 
+        } else {
+            HoaHong = DoanhSo * 0.10; 
+        }
+
+        document.write(`Tiền hoa hồng nhận được là: ${HoaHong} VNĐ`);
+    </script>
+</body>
+</html>

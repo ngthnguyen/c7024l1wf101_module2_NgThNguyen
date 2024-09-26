@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bai5</title>
+</head>
+<body>
+    <script>
+        let BaiKT = parseFloat(prompt("Nhap Diem KT: "));
+        let ThiGK = parseFloat(prompt("Nhap Diem GK: "));
+        let ThiCK = parseFloat(prompt("Nhap Diem CK: "));
+        let TB = ((BaiKT + (ThiGK * 2)+ (ThiCK * 3)) / 6).toFixed(2);
+        console.log(TB)
+
+        if (TB >=8) {
+            alert("Học sinh giỏi");
+        } else if (TB >=6) {
+            alert("Học sinh khá");
+        } else {
+            alert("Trung bình");;
+        }
+
+    </script>
+</body>
+</html>

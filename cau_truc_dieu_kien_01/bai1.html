@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BaiTap1</title>
+</head>
+<body>
+    <script>
+
+let a = parseFloat(prompt("Nhập vào số a: "));
+let b = parseFloat(prompt("Nhập vào số b: "));
+
+if (b !== 0) { //Kiểm tra b có bằng 0 hay không
+
+  if (a % b === 0) { 
+    alert("a chia hết cho b.");
+  } else {
+    alert("a không chia hết cho b.");
+  }
+} else {
+  alert("Không thể chia cho 0 vui lòng nhập số khác nha."); //nếu b=0 thì sẽ nhảy ra tb này vì ko thể chia cho 0
+}
+
+    </script>
+      
+</body>
+</html>

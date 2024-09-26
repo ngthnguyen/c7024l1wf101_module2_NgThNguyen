@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tính Cước Điện Thoại</title>
+</head>
+<body>
+    <script>
+        let SoPhut = +prompt("Nhập số phút đã sử dụng:");
+        const feeDefault = 15000; 
+        let TongTien = feeDefault; 
+
+        if (SoPhut <= 50) {
+            TongTien += SoPhut * 300; // 300 VNĐ/phút
+        } else if (SoPhut <= 200) {
+            TongTien += 50 * 300 + (SoPhut - 50) * 200; // 200 VNĐ/phút
+        } else {
+            TongTien += 50 * 300 + 150 * 200 + (SoPhut - 200) * 100; // 100 VNĐ/phút
+        }
+
+        // Hiển thị kết quả
+        document.write(`Tổng tiền cước điện thoại: ${TongTien} VNĐ`);
+    </script>
+</body>
+</html>
+
