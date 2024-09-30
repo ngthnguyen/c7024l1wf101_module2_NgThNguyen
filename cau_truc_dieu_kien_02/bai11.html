@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tính thuế thu nhập cá nhân</title>
+</head>
+<body>
+<!-- Bậc 1: Đến 60 triệu VND: 5%
+Bậc 2: Trên 60 triệu đến 120 triệu VND: 10%
+Bậc 3: Trên 120 triệu đến 216 triệu VND: 15%
+Bậc 4: Trên 216 triệu đến 384 triệu VND: 20%
+Bậc 5: Trên 384 triệu đến 624 triệu VND: 25%
+Bậc 6: Trên 624 triệu đến 960 triệu VND: 30%
+Bậc 7: Trên 960 triệu VND: 35% -->
+<!-- Thue TNCN = Tong Thu Nhap - Giam Tru Gia Canh x Thue Suat -->
+    <script>
+
+let tongThuNhap = parseFloat(prompt("Nhập tổng thu nhập hàng năm (VND):"));
+let soNguoiPhuThuoc = parseInt(prompt("Nhập số người phụ thuộc:"));
+
+
+if (isNaN(tongThuNhap) || tongThuNhap < 0 || isNaN(soNguoiPhuThuoc) || soNguoiPhuThuoc < 0) {
+  alert("Vui lòng nhập số liệu hợp lệ.");
+} else {
+
+  const giamTruGiaCanh = 11000000; // 11 triệu VND/tháng cho bản thân
+  const giamTruPhuThuoc = 4400000; // 4.4 triệu VND/tháng cho mỗi người phụ thuộc
+  let tongGiamTru = giamTruGiaCanh + (soNguoiPhuThuoc * giamTruPhuThuoc * 12); // Giảm trừ cho cả năm
+
+  let thuNhapTinhThue = tongThuNhap - tongGiamTru;
+
+  if (thuNhapTinhThue <= 0) {
+    alert("Bạn không phải nộp thuế.");
+  } else {
+
+    let thueTNCN = 0;
+
+    if (thuNhapTinhThue <= 60000000) {
+      thueTNCN = thuNhapTinhThue * 0.05;
+    } else if (thuNhapTinhThue <= 120000000) {
+      thueTNCN = (60000000 * 0.05) + ((thuNhapTinhThue - 60000000) * 0.10);
+    } else if (thuNhapTinhThue <= 216000000) {
+      thueTNCN = (60000000 * 0.05) + (60000000 * 0.10) + ((thuNhapTinhThue - 120000000) * 0.15);
+    } else if (thuNhapTinhThue <= 384000000) {
+      thueTNCN = (60000000 * 0.05) + (60000000 * 0.10) + (96000000 * 0.15) + ((thuNhapTinhThue - 216000000) * 0.20);
+    } else if (thuNhapTinhThue <= 624000000) {
+      thueTNCN = (60000000 * 0.05) + (60000000 * 0.10) + (96000000 * 0.15) + (168000000 * 0.20) + ((thuNhapTinhThue - 384000000) * 0.25);
+    } else if (thuNhapTinhThue <= 960000000) {
+      thueTNCN = (60000000 * 0.05) + (60000000 * 0.10) + (96000000 * 0.15) + (168000000 * 0.20) + (240000000 * 0.25) + ((thuNhapTinhThue - 624000000) * 0.30);
+    } else {
+      thueTNCN = (60000000 * 0.05) + (60000000 * 0.10) + (96000000 * 0.15) + (168000000 * 0.20) + (240000000 * 0.25) + (336000000 * 0.30) + ((thuNhapTinhThue - 960000000) * 0.35);
+    }
+
+    alert("Số thuế TNCN bạn phải nộp là: " + thueTNCN.toLocaleString('vi-VN') + " VND");
+  }
+}
+
+    </script>
+</body>
+</html>

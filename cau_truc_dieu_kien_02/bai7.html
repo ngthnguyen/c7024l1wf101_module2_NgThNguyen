@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BAi 7</title>
+</head>
+<body>
+    <p>Giai Phuong Trinh Bac II</p>
+    <!-- Cong Thuc Tinh Phuong Trinh Bac II:a²+bx+c=0 /Δ (delta) là b² - 4ac-->
+    <script>
+        let a = +prompt("Nhập số a");
+        let b = +prompt("Nhập số b");
+        let c = +prompt("Nhập số c");
+
+        if (a === 0) {
+            console.log("Đây không phải phương trình bậc hai.");
+        } else {
+            let D = b * b - 4 * a * c;
+            if (D > 0) {
+                let x1 = (-b + Math.sqrt(D)) / (2 * a);
+                let x2 = (-b - Math.sqrt(D)) / (2 * a);
+                console.log("Phương trình có 2 nghiệm: " + x1 + " và " + x2);
+            } else if (D === 0) {
+                let x = -b / (2 * a);
+                console.log("Phương trình có 1 nghiệm kép: " + x);
+            } else {
+                console.log("Phương trình vô nghiệm.");
+            }
+        }
+    </script>
+</body>
+</html>

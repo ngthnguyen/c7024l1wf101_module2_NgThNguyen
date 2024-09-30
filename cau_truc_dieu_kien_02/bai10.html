@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tinh So kWh</title>
+</head>
+<body>
+    <!-- Giá điện ví dụ
+    Bậc 1: 0 - 50 kWh, giá 1.678 VND/kWh.
+    Bậc 2: 51 - 100 kWh, giá 1.734 VND/kWh.
+    Bậc 3: 101 - 200 kWh, giá 2.014 VND/kWh.
+    Bậc 4: 201 - 300 kWh, giá 2.536 VND/kWh.
+    Bậc 5: 301 - 400 kWh, giá 2.834 VND/kWh.
+    Bậc 6: Từ 401 kWh trở lên, giá 2.927 VND/kWh. -->
+    <script>
+let soKWh = prompt("Nhập số kWh tiêu thụ:");
+soKWh = parseInt(soKWh);
+
+if (isNaN(soKWh) || soKWh < 0) {
+  alert("Vui lòng nhập số kWh hợp lệ.");
+} else {
+  let tongTien = 0;
+
+  if (soKWh <= 50) {
+    tongTien = soKWh * 1678;
+  } else if (soKWh <= 100) {
+    tongTien = (50 * 1678) + ((soKWh - 50) * 1734);
+  } else if (soKWh <= 200) {
+    tongTien = (50 * 1678) + (50 * 1734) + ((soKWh - 100) * 2014);
+  } else if (soKWh <= 300) {
+    tongTien = (50 * 1678) + (50 * 1734) + (100 * 2014) + ((soKWh - 200) * 2536);
+  } else if (soKWh <= 400) {
+    tongTien = (50 * 1678) + (50 * 1734) + (100 * 2014) + (100 * 2536) + ((soKWh - 300) * 2834);
+  } else {
+    tongTien = (50 * 1678) + (50 * 1734) + (100 * 2014) + (100 * 2536) + (100 * 2834) + ((soKWh - 400) * 2927);
+  }
+
+  alert("Số tiền điện phải trả là: " + tongTien.toLocaleString('vi-VN') + " VND");
+}
+
+    </script>
+</body>
+</html>
