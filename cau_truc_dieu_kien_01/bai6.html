@@ -7,18 +7,18 @@
 </head>
 <body>
     <script>
-        let DoanhSo = +prompt("Doanh So Ban Hang Cua Ban: ")
-        let HoaHong;
+        let doanhSo = +prompt("Doanh So Ban Hang Cua Ban: ")
+        let hoaHong;
 
-        if (DoanhSo < 2000000) {
-            HoaHong = DoanhSo * 0.03; 
-        } else if (DoanhSo < 5000000) {
-            HoaHong = DoanhSo * 0.05; 
+        if (doanhSo < 2000000) {
+            hoaHong = doanhSo * 0.02; 
+        } else if (doanhSo < 5000000) {
+            hoaHong = doanhSo * 0.03; 
         } else {
-            HoaHong = DoanhSo * 0.10; 
+            hoaHong = doanhSo * 0.8; 
         }
 
-        document.write(`Tiền hoa hồng nhận được là: ${HoaHong} VNĐ`);
+        document.write(`Tiền hoa hồng nhận được là: ${hoaHong} VNĐ`);
     </script>
 </body>
 </html>
