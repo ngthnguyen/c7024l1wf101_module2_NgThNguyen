@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hiển Thị Số Nguyên Tố</title>
+</head>
+<body>
+    <h1 style="text-align: center;">Hiển Thị Số Nguyên Tố</h1>
+    <label for="count">Nhập số lượng số nguyên tố cần hiển thị:</label>
+    <input type="number" id="count" min="1" max="100">
+    <button onclick="displayPrimes()">Hiển Thị</button>
+    <div id="result" style="text-align: center; margin-top: 20px;"></div>
+
+    <script>
+        function isPrime(num) {
+            if (num <= 1) return false; // Số nguyên tố phải lớn hơn 1
+            for (let i = 2; i <= Math.sqrt(num); i++) {
+                if (num % i === 0) return false; // Nếu chia hết cho i thì không phải số nguyên tố
+            }
+            return true; // Nếu không chia hết cho bất kỳ số nào thì là số nguyên tố
+        }
+
+        function displayPrimes() {
+            const numbers = parseInt(document.getElementById("count").value); // Lấy số lượng số nguyên tố từ input
+            let count = 0; // Đếm số nguyên tố đã hiển thị
+            let N = 2; // Bắt đầu kiểm tra từ 2
+            let resultHTML = ''; // Chuỗi chứa kết quả
+
+            while (count < numbers) { // Khi số lượng số nguyên tố chưa đủ
+                if (isPrime(N)) { // Kiểm tra N có phải là số nguyên tố không
+                    resultHTML += N + '<br>'; // Thêm số nguyên tố vào chuỗi kết quả
+                    count++; // Tăng số lượng số nguyên tố đã hiển thị
+                }
+                N++; // Tăng giá trị của N để kiểm tra số tiếp theo
+            }
+
+            document.getElementById("result").innerHTML = resultHTML; // Hiển thị kết quả lên trang
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bảng Cửu Chương</title>
+    <style>
+        table {
+            width: 50%;
+            border-collapse: collapse;
+            margin: 20px auto;
+        }
+        th, td {
+            border: 1px solid #000;
+            padding: 10px;
+            text-align: center;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+<body>
+    <h1 style="text-align: center;">Bảng Cửu Chương</h1>
+    <div id="multiplicationTable"></div> <!-- Khu vực hiển thị bảng cửu chương -->
+
+    <script>
+        // Bước 2: Viết mã JavaScript
+        const tableContainer = document.getElementById('multiplicationTable');
+        let tableHTML = '<table><tr><th>Multiplier</th>'; // Bắt đầu bảng HTML
+
+        // Thêm các tiêu đề cột từ 1 đến 9
+        for (let i = 1; i <= 9; i++) {
+            tableHTML += `<th>${i}</th>`;
+        }
+        tableHTML += '</tr>'; // Kết thúc hàng tiêu đề
+
+        // Vòng lặp để chèn các dòng và ô
+        for (let i = 1; i <= 9; i++) {
+            tableHTML += `<tr><td>${i}</td>`; // Mỗi hàng bắt đầu bằng số nhân
+
+            for (let j = 1; j <= 9; j++) {
+                tableHTML += `<td>${i * j}</td>`; // Tính tích và chèn vào ô
+            }
+            tableHTML += '</tr>'; // Kết thúc hàng
+        }
+
+        tableHTML += '</table>'; // Kết thúc bảng HTML
+        tableContainer.innerHTML = tableHTML; // Chèn bảng vào trang
+    </script>
+</body>
+</html>

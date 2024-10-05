@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tìm kiếm từ điển</title>
+</head>
+<body>
+    <h1>Từ điển Anh - Việt</h1>
+    <form id="dictionaryForm">
+        <label for="searchTerm">Nhập từ tiếng Anh cần tìm:</label>
+        <input type="text" id="searchTerm" required>
+        <button type="submit">Tìm kiếm</button>
+    </form>
+    <p id="result"></p> <!-- Khu vực hiển thị kết quả -->
+    
+    <script>
+        // Bước 2: Viết mã JavaScript
+        const englishWords = ["hello", "world", "goodbye", "friend", "computer"];
+        const vietnameseWords = ["xin chào", "thế giới", "tạm biệt", "bạn", "máy tính"];
+
+        document.getElementById("dictionaryForm").addEventListener("submit", function(event) {
+            event.preventDefault(); // Ngăn chặn hành động gửi form mặc định
+
+            const searchTerm = document.getElementById("searchTerm").value.toLowerCase(); // Lấy từ cần tìm
+            const index = englishWords.indexOf(searchTerm); // Tìm vị trí của từ trong mảng tiếng Anh
+
+            const resultElement = document.getElementById("result"); // Khu vực hiển thị kết quả
+            if (index !== -1) {
+                // Nếu tìm thấy từ, hiển thị từ tiếng Việt tương ứng
+                resultElement.textContent = `Từ tiếng Việt: ${vietnameseWords[index]}`;
+            } else {
+                // Nếu không tìm thấy, hiển thị thông báo không tìm thấy
+                resultElement.textContent = "Không tìm thấy từ này trong từ điển.";
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let n = 20; // Số lượng số Fibonacci cần hiển thị
+        let a = 0, b = 1, c;
+    
+        document.write("<h3>20 số đầu tiên trong dãy Fibonacci:</h3>");
+        document.write(a + "<br>"); // In số đầu tiên
+        document.write(b + "<br>"); // In số thứ hai
+    
+        for (let i = 3; i <= n; i++) {
+            c = a + b;
+            document.write(c + "<br>");
+            a = b;
+            b = c;
+        }
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let n = +prompt("Nhập chiều cao của tam giác vuông:");
+    
+        // 1. Góc vuông ở góc dưới bên trái
+        document.write("<h3>Góc vuông ở góc dưới bên trái</h3>");
+        for (let i = 1; i <= n; i++) {
+            for (let j = 1; j <= i; j++) {
+                document.write("* ");
+            }
+            document.write("<br>");
+        }
+        document.write("<br>");
+    
+        // 2. Góc vuông ở góc trên bên trái
+        document.write("<h3>Góc vuông ở góc trên bên trái</h3>");
+        for (let i = n; i >= 1; i--) {
+            for (let j = 1; j <= i; j++) {
+                document.write("* ");
+            }
+            document.write("<br>");
+        }
+        document.write("<br>");
+    
+        // 3. Góc vuông ở góc dưới bên phải
+        document.write("<h3>Góc vuông ở góc dưới bên phải</h3>");
+        for (let i = 1; i <= n; i++) {
+            for (let j = 1; j <= n - i; j++) {
+                document.write("&nbsp;&nbsp;");
+            }
+            for (let k = 1; k <= i; k++) {
+                document.write("* ");
+            }
+            document.write("<br>");
+        }
+        document.write("<br>");
+    
+        // 4. Góc vuông ở góc trên bên phải
+        document.write("<h3>Góc vuông ở góc trên bên phải</h3>");
+        for (let i = n; i >= 1; i--) {
+            for (let j = 1; j <= n - i; j++) {
+                document.write("&nbsp;&nbsp;");
+            }
+            for (let k = 1; k <= i; k++) {
+                document.write("* ");
+            }
+            document.write("<br>");
+        }
+    </script>
+    
+</body>
+</html>

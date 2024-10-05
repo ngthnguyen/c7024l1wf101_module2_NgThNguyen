@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // Nhập các thông tin cần thiết
+        let principal = +prompt("Nhập số tiền ban đầu (VND):"); // Số tiền ban đầu
+        let months = +prompt("Nhập số tháng cho vay:"); // Số tháng gửi
+        let monthlyInterestRate = +prompt("Nhập lãi suất hàng tháng (%):"); // Lãi suất hàng tháng (tính theo %)
+    
+        // Tính lãi suất thực tế (chuyển từ % sang hệ số)
+        let interestRate = monthlyInterestRate / 100;
+    
+        // Tính tổng số tiền sau khi có lãi (theo lãi kép)
+        let totalAmount = principal * Math.pow((1 + interestRate), months);
+    
+        // Hiển thị kết quả
+        document.write("<h3>Kết quả tính toán</h3>");
+        document.write("Số tiền ban đầu: " + principal + " VND<br>");
+        document.write("Số tháng cho vay: " + months + " tháng<br>");
+        document.write("Lãi suất hàng tháng: " + monthlyInterestRate + "%<br>");
+        document.write("Tổng số tiền sau " + months + " tháng: " + totalAmount.toFixed(2) + " VND<br>");
+    </script>    
+</body>
+</html>

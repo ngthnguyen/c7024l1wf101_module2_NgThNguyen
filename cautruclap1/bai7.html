@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FizzBuzz</title>
+</head>
+<body>
+
+    <h1>FizzBuzz Game</h1>
+    <table border="1" style="width:100%; text-align:center;">
+        <thead>
+            <tr>
+                <th>Số</th>
+                <th>Kết quả</th>
+            </tr>
+        </thead>
+        <tbody id="fizzbuzz-table">
+        </tbody>
+    </table>
+
+    <script>
+        for (let i = 1; i <= 100; i++) {
+            let result;
+
+            if (i % 3 === 0 && i % 5 === 0) {
+                result = "FizzBuzz";
+            } 
+
+            else if (i % 3 === 0) {
+                result = "Fizz";
+            } 
+
+            else if (i % 5 === 0) {
+                result = "Buzz";
+            } 
+
+            else {
+                result = i;
+            }
+
+
+            const row = document.createElement("tr");
+            const cell1 = document.createElement("td");
+            const cell2 = document.createElement("td");
+
+            cell1.textContent = i; // Số
+            cell2.textContent = result; // Kết quả
+
+            row.appendChild(cell1);
+            row.appendChild(cell2);
+            document.getElementById("fizzbuzz-table").appendChild(row);
+        }
+    </script>
+
+</body>
+</html>

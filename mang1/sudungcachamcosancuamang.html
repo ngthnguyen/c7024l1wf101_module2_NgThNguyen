@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Các Bài Tập JavaScript</title>
+</head>
+<body>
+    <h1>Các Bài Tập JavaScript</h1>
+    
+    <h2>Bài 1: Nối các phần tử trong mảng chuỗi</h2>
+    <script>
+        const myColor = ["Red", "Green", "White", "Black"];
+        const result1 = myColor.join(","); // Nối các phần tử lại với nhau bằng dấu phẩy
+        document.write("Kết quả Bài 1: " + result1 + "<br><br>"); // Hiển thị kết quả
+    </script>
+
+    <h2>Bài 2: Chèn dấu (-) giữa các số chẵn</h2>
+    <script>
+        let input2 = "025468"; // Chuỗi đầu vào
+        let result2 = "";
+
+        for (let i = 0; i < input2.length; i++) {
+            result2 += input2[i]; // Thêm số hiện tại vào kết quả
+
+            // Kiểm tra xem số hiện tại và số tiếp theo có phải là số chẵn không
+            if (i < input2.length - 1 && input2[i] % 2 === 0 && input2[i + 1] % 2 === 0) {
+                result2 += "-"; // Chèn dấu "-" nếu cả hai số đều chẵn
+            }
+        }
+
+        document.write("Kết quả Bài 2: " + result2 + "<br><br>"); // Hiển thị kết quả
+    </script>
+
+    <h2>Bài 3: Chuyển ký tự chữ thường thành chữ hoa</h2>
+    <script>
+        let inputString = 'The Quick Brown Fox'; // Chuỗi đầu vào
+        let result3 = '';
+
+        for (let i = 0; i < inputString.length; i++) {
+            // Kiểm tra xem ký tự hiện tại có phải là chữ thường không
+            if (inputString[i] === inputString[i].toLowerCase() && inputString[i] !== ' ') {
+                result3 += inputString[i].toUpperCase(); // Chuyển sang chữ hoa
+            } else {
+                result3 += inputString[i]; // Giữ nguyên ký tự
+            }
+        }
+
+        document.write("Kết quả Bài 3: " + result3 + "<br>"); // Hiển thị kết quả
+    </script>
+</body>
+</html>

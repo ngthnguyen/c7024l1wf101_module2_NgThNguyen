@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Fibonacci</h1>
+    <script>
+        let x = +prompt("Nhập số lượng số Fibonacci:");
+    
+        for (let n = 1; n <= x; n++) {
+            let a = 1, b = 1, c;
+    
+            document.write("f(1)= " + a + "<br>");
+            if (n > 1) {
+                document.write("f(2)= " + b + "<br>");
+            }
+    
+            for (let count = 3; count <= n; count++) {
+                c = a + b;
+                a = b;
+                b = c;
+                document.write("f(" + count + ")= " + c + "<br>");
+            }
+            document.write("<br>");
+        }
+    </script>
+</body>
+</html>

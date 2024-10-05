@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let arr7 = [1, 5, 8, 12, 7, 10, 3, 4, 9, 6];
+        const V = 5; // Bạn có thể thay đổi giá trị của V
+        const index = arr7.indexOf(V);
+        
+        if (index !== -1) {
+            arr7.splice(index, 1);
+            arr7.push(0); // Đưa 0 vào cuối mảng
+        }
+        document.write("Mảng sau khi xóa " + V + ": " + arr7.join(", ") + "<br>");
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const arr3 = [2, 5, 9, 1, 7, 3, 4, 8, 6, 10];
+        const max = Math.max(...arr3);
+        const average = arr3.reduce((sum, num) => sum + num, 0) / arr3.length;
+        document.write("Giá trị lớn nhất: " + max + "<br>");
+        document.write("Giá trị trung bình: " + average + "<br>");
+    </script>
+    
+</body>
+</html>
