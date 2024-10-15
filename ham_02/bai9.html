@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function demKyTuTrongMang(mangKyTu, kyTuCanTim) {
+        let dem = 0;
+        for (let i = 0; i < mangKyTu.length; i++) {
+            if (mangKyTu[i] === kyTuCanTim) {
+                dem++;
+            }
+        }
+        return dem > 0 ? dem : -1;
+        }
+    
+        const mang = ['a', 'b', 'c', 'a', 'd'];  
+        const kyTu = prompt("Nhập ký tự cần tìm:");
+        const ketQua = demKyTuTrongMang(mang, kyTu);
+        alert("Số lần xuất hiện của ký tự '" + kyTu + "' là: " + ketQua);
+    </script>
+</body>
+</html>

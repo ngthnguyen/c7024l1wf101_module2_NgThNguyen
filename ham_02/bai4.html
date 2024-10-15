@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    function kiemTraKyTuSo(kyTu) {
+        return !isNaN(kyTu) && kyTu >= 0 && kyTu <= 9;
+    }
+    
+    const inputChar = prompt("Nhập ký tự:");
+    const isNumber = kiemTraKyTuSo(inputChar);
+    alert("Ký tự nhập vào có phải là số không: " + isNumber);
+    </script>
+</body>
+</html>
