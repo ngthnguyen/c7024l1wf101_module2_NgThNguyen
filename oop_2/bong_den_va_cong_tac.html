@@ -7,7 +7,6 @@
 </head>
 <body>
     <script>
-        // Lớp bóng đèn
         class ElectricLamp {
             constructor(status = false) {  // Đèn mặc định tắt (status = false)
                 this.status = status;
@@ -18,37 +17,32 @@
             turnOff() {  // Tắt đèn
                 this.status = false;
             }
-            getStatus() {  // Lấy trạng thái đèn (bật/tắt)
+            getStatus() {  
                 return this.status;
             }
         }
 
-        // Lớp công tắc
         class SwitchButton {
-            constructor(lamp) {  // Nhận bóng đèn làm đối tượng
+            constructor(lamp) { 
                 this.lamp = lamp;
             }
-            switchOn() {  // Bật công tắc, đèn sáng
+            switchOn() {  
                 this.lamp.turnOn();
             }
-            switchOff() {  // Tắt công tắc, đèn tắt
+            switchOff() {  
                 this.lamp.turnOff();
             }
         }
 
-        // Tạo một bóng đèn, ban đầu đèn tắt
         let bongDen1 = new ElectricLamp();
 
-        // Tạo một công tắc, kết nối với bóng đèn
         let nut1 = new SwitchButton(bongDen1);
 
-        // Bật công tắc và kiểm tra trạng thái đèn
         nut1.switchOn();
-        console.log("Đèn bật:", bongDen1.getStatus());  // true
+        console.log("Đèn bật:", bongDen1.getStatus());  
 
-        // Tắt công tắc và kiểm tra lại trạng thái đèn
         nut1.switchOff();
-        console.log("Đèn tắt:", bongDen1.getStatus());  // false
+        console.log("Đèn tắt:", bongDen1.getStatus());  
     </script>
 </body>
 </html>
