@@ -1,11 +1,45 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="vi">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Chuyển đổi Nhiệt độ</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+    </style>
 </head>
 <body>
-    
+    <h1>Chuyển đổi Nhiệt độ</h1>
+    <p id="temperatureResult"></p>
+
+    <script>
+        class Temperature {
+            constructor(celsius) {
+                if (celsius < -273) {
+                    throw new Error("Giá trị độ C không thể nhỏ hơn -273 độ!");
+                }
+                this.celsius = celsius;  
+            }
+
+            toFahrenheit() {
+                return (this.celsius * 9/5) + 32; 
+            }
+
+            toKelvin() {
+                return this.celsius + 273.15;  
+            }
+        }
+
+        const temp = new Temperature(25);
+
+        document.getElementById("temperatureResult").innerText = 
+            "Nhiệt độ: " + 
+            temp.celsius + " °C = " + 
+            temp.toFahrenheit().toFixed(2) + " °F = " + 
+            temp.toKelvin().toFixed(2) + " K";
+    </script>
 </body>
 </html>
