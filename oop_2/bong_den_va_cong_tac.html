@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // Lớp bóng đèn
+        class ElectricLamp {
+            constructor(status = false) {  // Đèn mặc định tắt (status = false)
+                this.status = status;
+            }
+            turnOn() {  // Bật đèn
+                this.status = true;
+            }
+            turnOff() {  // Tắt đèn
+                this.status = false;
+            }
+            getStatus() {  // Lấy trạng thái đèn (bật/tắt)
+                return this.status;
+            }
+        }
+
+        // Lớp công tắc
+        class SwitchButton {
+            constructor(lamp) {  // Nhận bóng đèn làm đối tượng
+                this.lamp = lamp;
+            }
+            switchOn() {  // Bật công tắc, đèn sáng
+                this.lamp.turnOn();
+            }
+            switchOff() {  // Tắt công tắc, đèn tắt
+                this.lamp.turnOff();
+            }
+        }
+
+        // Tạo một bóng đèn, ban đầu đèn tắt
+        let bongDen1 = new ElectricLamp();
+
+        // Tạo một công tắc, kết nối với bóng đèn
+        let nut1 = new SwitchButton(bongDen1);
+
+        // Bật công tắc và kiểm tra trạng thái đèn
+        nut1.switchOn();
+        console.log("Đèn bật:", bongDen1.getStatus());  // true
+
+        // Tắt công tắc và kiểm tra lại trạng thái đèn
+        nut1.switchOff();
+        console.log("Đèn tắt:", bongDen1.getStatus());  // false
+    </script>
+</body>
+</html>
