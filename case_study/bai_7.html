@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    function checkArray() {
+    let n = prompt("Nhập các ký tự, cách nhau bằng dấu phẩy: ");
+
+    let arr = n.split(",");
+
+    let chiSo = true; 
+    let chiChu = true; 
+
+    for (let i = 0; i < arr.length; i++) {
+        let item = arr[i].trim();
+        if (!isNaN(item) && item !== '') {
+            chiChu = false; 
+        } 
+        
+        else if (/^[a-zA-Z]+$/.test(item)) {
+            chiSo = false; 
+        } 
+        else {
+            chiSo = false;
+            chiChu = false; 
+        }
+    }
+
+
+    if (chiSo) {
+        return 1; 
+    } else if (chiChu) {
+        return 0; 
+    } else {
+        return -1; 
+    }
+}
+
+let result = checkArray();
+console.log(result);
+
+        
+    </script>
+</body>
+</html>

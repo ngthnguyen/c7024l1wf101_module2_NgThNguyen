@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    function gcd(a, b) {
+        return b === 0 ? a : gcd(b, a % b);
+    }
+
+    function findPhanso() {
+        let x = prompt("Vui lòng nhập phân số (định dạng xx/yy):");
+
+        let parts = x.split("/");
+        if (parts.length !== 2 || parts[1] == 0) {
+            console.log("NO");
+            return;
+        }
+
+        let xx = parseInt(parts[0]);
+        let yy = parseInt(parts[1]);
+
+        if (isNaN(xx) || isNaN(yy)) {
+            console.log("NO");
+            return;
+        }
+
+        let uocChung = gcd(Math.abs(xx), Math.abs(yy));
+
+        xx /= uocChung;
+        yy /= uocChung;
+
+        if (yy < 0) {
+            xx = -xx;
+            yy = -yy;
+        }
+
+        console.log(xx + "/" + yy);
+    }   
+
+    findPhanso();
+    </script>
+</body>
+</html>
