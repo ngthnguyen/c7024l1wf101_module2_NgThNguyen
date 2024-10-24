@@ -6,6 +6,42 @@
     <title>Document</title>
 </head>
 <body>
+        <script>
+        function nhapMang() {
+            let n = parseInt(prompt("Nhập độ dài của mảng (số chẵn):"));
     
+            if (n % 2 !== 0) {
+            console.log("Độ dài mảng phải là số chẵn!");
+            return;
+            }
+
+    
+            let arr = [];
+            for (let i = 0; i < n; i++) {
+                let element = parseInt(prompt(`Nhập phần tử thứ ${i + 1}:`));
+                arr.push(element); 
+            }
+
+            console.log("Mảng vừa nhập:", arr);
+
+            let isOk = true; 
+
+            for (let i = 0; i < arr.length - 1; i += 2) {
+                if (arr[i] >= arr[i + 1]) {
+                    isOk = false; 
+                    break;
+                }
+             }
+
+
+            if (isOk) {
+                console.log("OK");
+            } else {
+                console.log("No");
+            }
+        }   
+        
+        nhapMang();
+    </script>
 </body>
 </html>
